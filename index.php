@@ -1,16 +1,10 @@
 <?php 
+include __DIR__.'/partials/functions.php';
 
 $random_password = '';
 
     if(isset($_GET['password'])) {
         $password = intval($_GET['password']);
-
-        function generateRandomPassword($length){
-            $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_';
-            $random_characters = str_shuffle($characters);
-            return substr($random_characters, 0, $length);
-        }
-
         $random_password = generateRandomPassword($password);
     }
 ?>
